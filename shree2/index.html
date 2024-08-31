@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Lifestyle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Beauty Lifestyle</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Natural Beauty</h1>
+            <p>Explore our collection of premium cosmetics designed to enhance your unique glow</p>
+            <a href="https://WWW.mamaearth.in" target="_blank" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="featured-products container">
+        <h2>Featured Products</h2>
+        <div class="product-grid" id="featured-products">
+            <!-- Featured products will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Sometimes you just have to put on lip gloss and pretend to be psyched"</p>
+                    <p class="testimonial-author">- Mindy caling</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I feel more confident if my makeup looks good"</p>
+                    <p class="testimonial-author">- Ellie Goudline</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Outer beauty attracts but inner beauty captivates"</p>
+                    <p class="testimonial-author">- Kate Angell</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Beauty Lifestyle. All rights reserved.</p>
+            <a href="https://WWW.instagram.com" target="_blank"><img src="instagram.png" width="30px" alt=""></a>
+            <a href="https://in.linkedin.com" target="_blank"><img src="linkedin.png" width="30px" alt=""></a>
+        </div>
+    </footer>
+
+    <script>
+    // Sample featured product data
+    const featuredProducts = [
+        {
+            name: "Eyeliner",
+            price: 39.99,
+            image: "eyeliner.jpeg"
+        },
+        {
+            name: "Flawless Foundation",
+            price: 29.99,
+            image: "foundation.jpeg"
+        },
+        {
+            name: "Luscious Lip Gloss",
+            price: 14.99,
+            image: "lipgloss.jpeg"
+        },
+        {
+            name: "Volumizing Mascara",
+            price: 19.99,
+            image: "mascara.jpeg"
+        }
+    ];
+
+    // Function to create a product card element
+    function createProductCard(product) {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image" width="250" height="200">
+            <div class="product-info">
+                <h3 class="product-name">${product.name}</h3>
+                <p class="product-price">$${product.price.toFixed(2)}</p>
+                <a href="https://WWW.purplle.com" target="_blank" class="btn">View Details</a>
+            </div>
+        `;
+        return card;
+    }
+
+    
+    function renderFeaturedProducts() {
+        const productGrid = document.getElementById('featured-products');
+        productGrid.innerHTML = ''; // Clear existing products
+        
+        featuredProducts.forEach(product => {
+            const productCard = createProductCard(product);
+            productGrid.appendChild(productCard);
+        });
+    }
+
+    // Render featured products
+    renderFeaturedProducts();
+    </script>
+</body>
+</html>

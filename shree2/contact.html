@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Lifestyle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Beauty Lifestyle</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="contact-section">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Whether you have a question about our products, need skincare advice, or just want to say hello, feel free to reach out to us.</p>
+            
+            <form class="contact-form" method="GET" action="">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+
+            <div class="contact-info">
+                <h2>Other Ways to Reach Us</h2>
+                <p>Email: abc@gmail.com</p>
+                <p>Phone: +91 123-456-789</p>
+                <p>Address: 123 3rd cross street T-nagar</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Beauty Lifestyle. All rights reserved.</p>
+            <a href="https://WWW.instagram.com"><img src="instagram.png" width="30px" alt=""></a>
+            <a href="https://in.linkedin.com"><img src="linkedin.png" width="30px" alt=""></a>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            alert(`Thank you for your message, ${name}! We'll get back to you soon.`);
+            form.reset();
+        });
+
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.style.boxShadow = '0 0 5px #ff66b2';
+            });
+            input.addEventListener('blur', () => {
+                input.style.boxShadow = 'none';
+            });
+        });
+    });
+
+   /* function sendtoWhatsApp(){
+        let user_fname = document.getElementById("name").value; 
+        let user_mobile = document.getElementById("mobile").value; 
+        let user_email = document.getElementById("email").value; 
+        let user_message = document.getElementById("message").value; 
+        let whatsappURL = "https://wa.me/91_YOUR_WHATSAPP_NUMBER_HERE>?text="
+            + "UserName : " + user_fname + "%0a"
+            + "UserMobileNo. : " + user_mobile + "%0a"
+            + "UserEmail : " + user_email + "%0a"
+            + "UserQuery : " + user_message;
+        window.open(whatsappURL,"_blank");
+    }*/
+    </script>
+</body>
+</html>

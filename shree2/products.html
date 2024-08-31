@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Lifestyle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Beauty Lifestyle</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <h1>Our Products</h1>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Beauty Lifestyle. All rights reserved.</p>
+            <a href="https://WWW.instagram.com"><img src="instagram.png" width="30px" alt=""></a>
+            <a href="https://in.linkedin.com"><img src="linkedin.png" width="30px" alt=""></a>
+        </div>
+    </footer>
+
+    <script>
+    // Sample product data
+    const products = [
+        {
+            name: " Glow Serum",
+            description: "Brighten and hydrate your skin with our bestselling serum.",
+            price: 39.99,
+            image: "serum.jpeg"
+        },
+        {
+            name: " Foundation",
+            description: "Achieve a perfect complexion with our long-lasting foundation.",
+            price: 29.99,
+            image: "foundation.jpeg"
+        },
+        {
+            name: " Lip Gloss",
+            description: "Add a touch of shine with our nourishing lip gloss.",
+            price: 14.99,
+            image: "lipgloss.jpeg"
+        },
+        {
+            name: " Mascara",
+            description: "Get dramatic lashes with our smudge-proof mascara.",
+            price: 19.99,
+            image: "mascara.jpeg"
+        },
+        {
+            name: " Night Cream",
+            description: "Wake up to refreshed and rejuvenated skin.",
+            price: 49.99,
+            image: "nc.jpeg"
+        },
+        {
+            name: " Cleansing Foam",
+            description: "Remove impurities without stripping your skin's natural oils.",
+            price: 24.99,
+            image: "foam.jpeg"
+        }
+    ];
+
+    // Function to create a product card element
+    function createProductCard(product) {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image" width="250" height="200">
+            <div class="product-info">
+                <h2 class="product-name">${product.name}</h2>
+                <p class="product-description">${product.description}</p>
+                <p class="product-price">$${product.price.toFixed(2)}</p>
+                <a href="https://www.amazon.in/gp/cart/view.html?ref_=nav_cart" target="_blank" class="btn">Add to Cart</a>
+            </div>
+        `;
+        return card;
+    }
+
+    // Function to render product cards
+    function renderProducts() {
+        const productGrid = document.getElementById('product-grid');
+        productGrid.innerHTML = ''; // Clear existing products
+        
+        products.forEach(product => {
+            const productCard = createProductCard(product);
+            productGrid.appendChild(productCard);
+        });
+    }
+
+    // Render initial products
+    renderProducts();
+    </script>
+</body>
+</html>

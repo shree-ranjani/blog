@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Lifestyle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Beauty Lifestyle</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="blog-section">
+            <h1>Beauty Lifestyle Blog</h1>
+            <p>Welcome to our beauty blog! Here you'll find expert tips, product reviews, and the latest trends in skincare and makeup.</p>
+            
+            <article class="blog-post">
+                <h2> Skincare Myths</h2>
+                <div class="blog-meta">By Norris Dermatology</div>
+                <img src="wome.jpeg" alt="Woman examining her skin in a mirror" width="600" height="400">
+                <p>There's a lot of misinformation out there when it comes to skincare. In this article, we're setting the record straight on 10 common skincare myths that might be holding you back from achieving your best skin.</p>
+                <a href="https://www.norrisderm.com/50-skin-care-myths/" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>The Art of Layering Skincare Products</h2>
+                <div class="blog-meta">By SINY Dermatology</div>
+                <img src="skin.jpeg" alt="Various skincare products arranged in order of application" width="600" height="400">
+                <p>Confused about the order in which to apply your skincare products? You're not alone. In this guide, we break down the perfect order for layering your skincare products to maximize their effectiveness.</p>
+                <a href="https://WWW.sinyderm.com" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>How to Choose the Right Foundation for Your Skin Type</h2>
+                <div class="blog-meta">By Loreal Paris</div>
+                <img src="diff.jpeg" alt="Different shades of foundation swatches on an arm" width="600" height="400">
+                <p>Finding the perfect foundation can be a challenge. In this comprehensive guide, we'll help you navigate the world of foundations and find the best one for your unique skin type and concerns.</p>
+                <a href="https://WWW.lorealparis.com.au" class="read-more">Read More</a>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Beauty Lifestyle. All rights reserved.</p>
+            <a href="https://WWW.instagram.com"><img src="instagram.png" width="30px" alt=""></a>
+            <a href="https://in.linkedin.com"><img src="linkedin.png" width="30px" alt=""></a>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const blogPosts = document.querySelectorAll('.blog-post');
+        
+        blogPosts.forEach((post) => {
+            post.addEventListener('mouseenter', () => {
+                post.style.transform = 'translateY(-5px)';
+                post.style.transition = 'transform 0.3s ease';
+            });
+            
+            post.addEventListener('mouseleave', () => {
+                post.style.transform = 'translateY(0)';
+            });
+        });
+
+        const readMoreLinks = document.querySelectorAll('.read-more');
+        readMoreLinks.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const postTitle = e.target.closest('.blog-post').querySelector('h2').textContent;
+                alert(`You're about to read: "${postTitle}". This feature is coming soon!`);
+            });
+        });
+    });
+    </script>
+</body>
+</html>
